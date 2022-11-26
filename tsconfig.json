@@ -23,6 +23,10 @@
     },
     "types": ["@types/node", "@types/jest", "@nuxt/types"]
   },
-  "include": ["./app/**/*.ts", "./app/**/*.vue"],
-  "exclude": ["node_modules"]
+  "include": ["./app/**/*.ts", "./app/**/*.vue", "app/plugins/lottie-player.js"],
+  "exclude": ["node_modules"],
+  "vueCompilerOptions": {
+    "target": 2,
+    // "target": 2, // For Vue version <= 2.6.14
+  }
 }

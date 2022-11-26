@@ -69,7 +69,9 @@ const nuxtConfig: Configuration = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    { src: "~/plugins/lottie-player.js", mode: "client" },
+  ],
 
   /*
    ** Nuxt.js modules
