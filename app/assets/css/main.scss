@@ -5,10 +5,14 @@ body {
   @apply subpixel-antialiased;
 }
 
-.main {
+.main, .main-home {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.main-home {
+  background-color: #DDDDDD;
 }
 
 .page-enter-active,
