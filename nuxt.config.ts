@@ -140,7 +140,15 @@ const nuxtConfig: Configuration = {
     ],
     '@nuxtjs/eslint-module',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts',
   ],
+  
+  googleFonts: {
+    preconnect: true,
+    families: {
+      Archivo: [400]
+    }
+  },
 
   build: {
     html: {
