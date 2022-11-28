@@ -1,7 +1,6 @@
 <template>
   <section class="career">
     <div class="hero">
-      <!-- <img class="w-full" src="~/static/images/HEADERCAREER.png" alt="hero career" /> -->
       <h1 class="hero__text container mx-auto text-5xl text-white">
         You’re one step away <br />
         from making a difference
@@ -124,7 +123,7 @@ export default class Home extends Vue {
 <style scoped>
 .hero {
   width: 100%;
-  background-image: url('~static/images/HEADERCAREER.png');
+  background-image: url('~static/images/HEADERCONTACTUS.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
