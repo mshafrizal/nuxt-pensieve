@@ -15,8 +15,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import SiteHeader from '@/components/partials/header.vue';
-import SiteFooter from '@/components/partials/footer.vue';
+import SiteHeader from '@/components/partials/headerHome.vue';
+import SiteFooter from '@/components/partials/footerHome.vue';
 
 @Component({
   components: {
@@ -28,6 +28,9 @@ export default class DefaultLayout extends Vue {}
 </script>
 
 <style lang="scss">
+* {
+  font-family: Archivo;
+}
 .divider {
   position: relative;
   min-width: 100vw;

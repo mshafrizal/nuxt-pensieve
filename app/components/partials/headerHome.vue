@@ -1,10 +1,10 @@
 <template>
-  <header class="fixed top-0 w-full px-2 md:px-10 flex items-center py-4 md:py-8 z-10">
+  <header class="flex items-center py-4 md:py-8">
     <div class="header__logo">
       <nuxt-link to="/">
         <img
           class="w-24"
-          src="https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/pensieve-logo-green_-JWIJpk9N.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1669439827352"
+          src="https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/pensieve-logo-black_wwWueRMhu.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1669442167496"
           alt="Logo"
         />
       </nuxt-link>
@@ -69,8 +69,5 @@ export default class Header extends Vue {
       @apply font-bold;
     }
   }
-}
-header {
-  backdrop-filter: blur(10px);
 }
 </style>

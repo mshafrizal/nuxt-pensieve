@@ -6,5 +6,8 @@
   "icon": "/images/footer-1-P.png",
   "loadingColor": "#0b3765",
   "seoDescription": "A quickstart for Nuxt & Netlify CMS",
-  "seoMetaImage": ""
+  "seoMetaImage": "",
+  "instagramUrl": "",
+  "kalibrrUrl": "",
+  "linkedinUrl": ""
 }
