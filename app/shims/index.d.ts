@@ -24,3 +24,17 @@ interface Page {
   seoDescription?: string;
   seoMetaImage?: string;
 }
+
+interface BlogPost {
+  tag: string;
+
+  title: string;
+
+  created_at: string;
+
+  read_length: string;
+
+  content: string;
+
+  image_url: string;
+}

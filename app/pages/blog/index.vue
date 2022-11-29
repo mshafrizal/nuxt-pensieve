@@ -1,13 +1,47 @@
 <template>
   <section class="blog">
-    <div class="py-8 md:py-16 text-center">
-      <h1 class="text-lg md:text-xl lg:text-4xl xl:text-6xl">Blog</h1>
-      <h2 class="text-base md:text-lg lg:text-xl xl:text-2xl">
-        Slow-carb messenger bag mlkshk fingerstache four dollar toast.
-      </h2>
+    <div class="hero">
+      <div class="hero__text container mx-auto flex flex-col">
+        <h1 class="text-6xl text-white mb-4">
+          Welcome to <br />
+          Pensieve Blog!
+        </h1>
+        <p class="text-2xl text-white mb-20">Get newest article about latest technology</p>
+        <!-- <div class="w-64">
+          <lottie-player
+            src="/animation/home-button.json"
+            ref="lottie"
+            id="lottieBtn"
+          ></lottie-player>
+        </div> -->
+        <button class="bg-gray-400 border-2 border-black uppercase text-black w-1/6 py-3">
+          Subscribe
+        </button>
+      </div>
     </div>
 
-    <div class="flex flex-wrap md:-mx-4 pb-20">
+    <div class="content">
+      <div class="container mx-auto flex flex-col py-24">
+        <div class="flex mb-16 w-1/3">
+          <form class="flex-grow">
+            <label for="search">
+              <input
+                class="h-15 bg-transparent border border-black px-6 py-3 w-full"
+                type="text"
+                name="search"
+                id="search"
+                placeholder="search article / topic / month"
+              />
+            </label>
+          </form>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-10" v-if="blogSample">
+          <blog-item v-for="n in 9" :key="n" :blog-post="blogSample"> </blog-item>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="flex flex-wrap md:-mx-4 pb-20">
       <div v-for="(post, index) in posts" :key="index" class="w-full md:w-1/2 my-4 md:px-4">
         <div class="post">
           <nuxt-link :to="`/blog/${post.slug}`">
@@ -28,8 +62,8 @@
           </nuxt-link>
         </div>
       </div>
-    </div>
-    <Pagination v-if="totalPages > 1" :current-page="currentPage" :total-pages="totalPages" />
+    </div> -->
+    <!-- <Pagination v-if="totalPages > 1" :current-page="currentPage" :total-pages="totalPages" /> -->
   </section>
 </template>
 
@@ -38,10 +72,12 @@ import { Component, Vue } from 'nuxt-property-decorator';
 import { MetaInfo } from 'vue-meta';
 
 const Pagination = () => import('@/components/commons/pagination.vue');
+const BlogItem = () => import('@/components/partials/blogItem.vue');
 
 @Component({
   components: {
     Pagination,
+    BlogItem,
   },
 
   head(): MetaInfo {
@@ -64,6 +100,8 @@ export default class BlogIndex extends Vue {
 
   posts: Post[] = [];
 
+  blogSample: BlogPost | null = null;
+
   async asyncData({ params, store }) {
     const page: number = params.page ? parseInt(params.page, 10) : 1;
     const { perPage }: { perPage: number } = store.state;
@@ -74,11 +112,33 @@ export default class BlogIndex extends Vue {
       return range - perPage < indexPage && indexPage <= range;
     });
 
+    const blog = require('@/content/blog/dummyblog.json');
+
     return {
       currentPage: page,
       totalPages: Math.ceil(store.state.posts.length / perPage),
       posts: posts || [],
+      blogSample: blog,
     };
+  }
+
+  mounted(): void {
+    if (process.browser) {
+      window.addEventListener('load', async function () {
+        const lottie = document.getElementById('lottieBtn') as HTMLElementLottie;
+        // const { lottie } = this.$refs;
+        if (lottie) {
+          const lottieInstance = await lottie.getLottie();
+          lottie.addEventListener('mouseenter', function (): void {
+            lottieInstance.playSegments([0, 15], true);
+          });
+
+          lottie.addEventListener('mouseout', function (): void {
+            lottieInstance.playSegments([15, 30], true);
+          });
+        }
+      });
+    }
   }
 }
 </script>
@@ -92,5 +152,26 @@ export default class BlogIndex extends Vue {
       @apply shadow-xl;
     }
   }
+}
+.hero {
+  width: 100%;
+  background-image: url('~static/images/HEADERBLOG.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 680px;
+}
+.hero__text {
+  position: absolute;
+  text-align: left;
+  top: 50%;
+  left: 80px;
+  transform: translate(0, -50%);
+  color: white;
+  width: 100%;
+}
+.content {
+  background-color: #dddddd;
 }
 </style>
