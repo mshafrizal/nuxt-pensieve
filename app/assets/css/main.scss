@@ -1,5 +1,5 @@
 @import 'markdown';
-
+@import 'variables';
 body {
   @apply antialiased;
   @apply subpixel-antialiased;
@@ -46,4 +46,18 @@ body {
 .text-field:focus {
   outline: none;
   border-bottom: 3px solid #7777FF;
+}
+
+.text-gray-pensieve {
+  color: $pgrey;
+}
+.text-gray-dark-pensieve {
+  color: $pgreydark;
+}
+.text-gray-light-pensieve {
+  color: $pgreylight;
+}
+
+.font-mono {
+  font-family: 'Roboto Mono', monospace;
 }

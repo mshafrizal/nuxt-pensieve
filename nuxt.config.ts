@@ -146,7 +146,8 @@ const nuxtConfig: Configuration = {
   googleFonts: {
     preconnect: true,
     families: {
-      Archivo: [400]
+      Archivo: [200],
+      'Roboto Mono': [400],
     }
   },
 
