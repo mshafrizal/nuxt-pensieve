@@ -13,27 +13,27 @@
     <nav class="nav ml-auto">
       <ul class="flex flex-row items-center sm:mt-4 sm:pt-4 md:mt-0 md:pt-0 md:mr-4 lg:mr-8">
         <li>
-          <nuxt-link to="/about" class="block font-medium px-4 py-1 md:p-2 lg:px-4">
+          <nuxt-link to="/about" class="block text-white font-medium px-4 py-1 md:p-2 lg:px-4">
             About
           </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/products" class="block font-medium px-4 py-1 md:p-2 lg:px-4">
+          <nuxt-link to="/products" class="block text-white font-medium px-4 py-1 md:p-2 lg:px-4">
             Products
           </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/blog" class="block font-medium px-4 py-1 md:p-2 lg:px-4">
+          <nuxt-link to="/blog" class="block text-white font-medium px-4 py-1 md:p-2 lg:px-4">
             Blog
           </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/career" class="block font-medium px-4 py-1 md:p-2 lg:px-4">
+          <nuxt-link to="/career" class="block text-white font-medium px-4 py-1 md:p-2 lg:px-4">
             Career
           </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/contact" class="block font-medium px-4 py-1 md:p-2 lg:px-4">
+          <nuxt-link to="/contact" class="block text-white font-medium px-4 py-1 md:p-2 lg:px-4">
             Contact
           </nuxt-link>
         </li>

@@ -9,5 +9,55 @@
   "seoMetaImage": "",
   "instagramUrl": "",
   "kalibrrUrl": "",
-  "linkedinUrl": ""
+  "linkedinUrl": "",
+  "services": [
+    {
+      "image_url": "https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/service-01_lec2sMkoW.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669439809123",
+      "name": "Investigation and Profiling Analytics"
+    },
+    {
+      "image_url": "https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/service-02_FN9VxkCwY.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669439804796",
+      "name": "Cryptocurrency Monitoring and Investigation"
+    },
+    {
+      "image_url": "https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/service-03_gb1-yVuRf.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669439796556",
+      "name": "Intellectual Property Rights Registry"
+    },
+    {
+      "image_url": "https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/service-04_OWKu5m3CS.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669439792084",
+      "name": "Border Control"
+    },
+    {
+      "image_url": "https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/service-05_bhgo7oOQd.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669439778863",
+      "name": "Cybersecurity"
+    },
+    {
+      "image_url": "https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/service-06_mL3EvR48y.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669439774623",
+      "name": "Business Registry Optimization"
+    },
+    {
+      "image_url": "https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/service-07_zKAhgPDhn.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669439770462",
+      "name": "Land Registry"
+    },
+    {
+      "image_url": "https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/service-08_Gc7zEa0b7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669439765472",
+      "name": "E-Passport"
+    },
+    {
+      "image_url": "https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/service-09_H7kClKm-8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669439760620",
+      "name": "Digital Identity"
+    },
+    {
+      "image_url": "https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/service-10_B99o-m9sB.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669439756186",
+      "name": "Healthcare"
+    },
+    {
+      "image_url": "https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/service-11_WN9HAJsL_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669439751395",
+      "name": "Tax Filing"
+    },
+    {
+      "image_url": "https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/service-12_spZIts7qo.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669439747157",
+      "name": "Vessel and Border Intelligence"
+    }
+  ]
 }
