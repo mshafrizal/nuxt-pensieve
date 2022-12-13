@@ -1,5 +1,5 @@
 <template>
-  <main :class="[$route.name]" class="main-home px-4 md:px-0">
+  <main :class="[$route.name]" class="main-home px-4 sm:flex-grow sm:flex md:px-0">
     <div class="container mx-auto">
       <site-header />
       <nuxt class="nuxt" />
@@ -35,6 +35,7 @@ export default class DefaultLayout extends Vue {}
   position: relative;
   min-width: 100vw;
   margin-top: auto;
+  max-height: 100vh;
 }
 
 .nuxt {

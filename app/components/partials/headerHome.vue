@@ -1,17 +1,27 @@
 <template>
-  <header class="flex items-center py-4 md:py-8">
+  <header class="flex items-center py-4 md:py-8 sm:px-4">
     <div class="header__logo">
       <nuxt-link to="/">
         <img
-          class="w-24"
+          class="hidden md:block w-24"
           src="https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/pensieve-logo-black_wwWueRMhu.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1669442167496"
           alt="Logo"
+        />
+        <img
+          class="block md:hidden w-4"
+          src="https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/footer-1-P__Mq5GDDmgc.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1669442171601"
+          alt="Pensieve Logo"
         />
       </nuxt-link>
     </div>
 
     <nav class="nav ml-auto">
-      <ul class="flex flex-row items-center sm:mt-4 sm:pt-4 md:mt-0 md:pt-0 md:mr-4 lg:mr-8">
+      <button class="flex md:hidden cursor-pointer p-1 hover:bg-gray-400">
+        <img src="~assets/icons/menu.svg" alt="menu" class="w-5 h-5" />
+      </button>
+      <ul
+        class="hidden md:flex flex-row items-center sm:mt-4 sm:pt-4 md:mt-0 md:pt-0 md:mr-4 lg:mr-8"
+      >
         <li>
           <nuxt-link to="/about" class="block font-medium px-4 py-1 md:p-2 lg:px-4">
             About
