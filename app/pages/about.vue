@@ -94,7 +94,7 @@ export default class Career extends Vue {}
 <style scoped>
 .hero {
   width: 100%;
-  background-image: url('~static/images/HEADERPRODUCTS.png');
+  background-image: url('~static/images/HEADERABOUTUS.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
