@@ -3,6 +3,11 @@
     <site-header />
     <nuxt class="nuxt" />
     <site-footer />
+    <div class="progress">
+      <div class="progress-container">
+        <div class="progress-bar" id="bar"></div>
+      </div>
+    </div>
   </main>
 </template>
 
@@ -17,7 +22,31 @@ import SiteFooter from '@/components/partials/footer.vue';
     SiteFooter,
   },
 })
-export default class DefaultLayout extends Vue {}
+export default class DefaultLayout extends Vue {
+  scroll = 0;
+
+  height = 0;
+
+  scrolled = 0;
+
+  mounted(): void {
+    if (process.client) {
+      window.onscroll = () => {
+        this.progressBar();
+      };
+    }
+  }
+
+  progressBar(): void {
+    this.scroll = document.body.scrollTop || document.documentElement.scrollTop;
+    this.height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    this.scrolled = (this.scroll / this.height) * 100;
+    const bar = document.getElementById('bar');
+    if (bar) {
+      bar.style.width = `${this.scrolled}%`;
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -33,5 +62,25 @@ export default class DefaultLayout extends Vue {}
 .nuxt {
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   z-index: 0;
+}
+
+.progress {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #857bff;
+  width: 0%;
 }
 </style>
