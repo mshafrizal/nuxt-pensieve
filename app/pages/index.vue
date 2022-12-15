@@ -1,5 +1,5 @@
 <template>
-  <section class="home container mx-auto">
+  <section class="home container mx-auto px-4 sm:px-0">
     <div class="md:py-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
       <div class="flex flex-col w-full lg:w-3/5 justify-center lg:items-start overflow-y-hidden">
         <h1 class="text-2xl lg:text-5xl md:px-10 md:mb-10">

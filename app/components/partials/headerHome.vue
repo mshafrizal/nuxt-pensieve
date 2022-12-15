@@ -1,5 +1,5 @@
 <template>
-  <header class="flex items-center py-4 md:py-8 sm:px-4">
+  <header class="flex items-center px-4 py-4 md:py-8 relative">
     <div class="header__logo">
       <nuxt-link to="/">
         <img
@@ -16,7 +16,11 @@
     </div>
 
     <nav class="nav ml-auto">
-      <button class="flex md:hidden cursor-pointer p-1 hover:bg-gray-400">
+      <button
+        @click="onNavMobileClick"
+        @keydown="onNavMobileClick"
+        class="flex md:hidden cursor-pointer p-1 hover:bg-gray-400"
+      >
         <img src="~assets/icons/menu.svg" alt="menu" class="w-5 h-5" />
       </button>
       <ul
@@ -67,6 +71,14 @@ import { Component, Vue } from 'nuxt-property-decorator';
 export default class Header extends Vue {
   get pages(): Page[] {
     return this.$store.state.pages;
+  }
+
+  get navMobileState(): boolean {
+    return this.$store.state.navMobileState;
+  }
+
+  onNavMobileClick(): void {
+    this.$store.dispatch('UPDATE_NAV_MOBILE_STATE', !this.navMobileState);
   }
 }
 </script>
