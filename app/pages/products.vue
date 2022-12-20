@@ -91,14 +91,14 @@
     </div>
     <div class="products">
       <div class="container mx-auto">
-        <h2 class="text-5xl font-thin mb-32">
+        <h2 class="font-thin mb-6 sm:mb-32">
           Explore tomorrow’s AI-driven solutions finely crafted for digital government and
           enterprise
         </h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-10">
           <div v-for="(service, i) in services" class="flex flex-col items-center" :key="i">
             <img class="mb-10 min-w-10 min-h-10" :src="service.image_url" :alt="service.name" />
-            <p class="text-3xl text-center font-thin">{{ service.name }}</p>
+            <p class="text-center font-thin">{{ service.name }}</p>
           </div>
         </div>
       </div>
@@ -174,6 +174,12 @@ export default class Career extends Vue {
     max-width: 256px;
   }
   .wwd h2 {
+    font-size: 30px;
+  }
+  .products {
+    padding: 96px 24px;
+  }
+  .products h2 {
     font-size: 30px;
   }
 }
