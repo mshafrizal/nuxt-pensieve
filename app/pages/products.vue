@@ -119,4 +119,16 @@ export default class Career extends Vue {
   color: #808080;
   margin-bottom: 66px;
 }
+@media only screen and (max-width: 600px) {
+  .hero {
+    height: 576px;
+  }
+  .hero__text {
+    font-size: 40px;
+    left: 16px;
+    top: 30%;
+    transform: translate(0, -30%);
+    max-width: 256px;
+  }
+}
 </style>
