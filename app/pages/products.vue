@@ -9,40 +9,83 @@
       </h1>
     </div>
 
-    <div class="content pt-24 pt-32 pb-32 flex flex-col">
-      <div class="container mx-auto flex flex-col mb-48">
-        <h2 class="text-4xl font-thin" style="width: 875px; margin: 0 auto;">What We Deliver</h2>
+    <div class="wwd py-16 pl-6 flex flex-col">
+      <div class="container mx-auto flex flex-col sm:mb-48">
+        <h2 class="text-4xl font-thin">What We Deliver</h2>
+        <!-- MOBILE ANIMATION -->
         <lottie-player
+          class="block sm:hidden"
+          src="/animation/mobile_stack_1.json"
+          ref="mobile_lottie_1"
+          id="mobile_stack_1"
+          loop
+          autoplay
+          style="z-index: 1;"
+        ></lottie-player>
+        <lottie-player
+          class="block sm:hidden"
+          src="/animation/mobile_stack_2.json"
+          ref="mobile_lottie_2"
+          id="mobile_stack_2"
+          loop
+          autoplay
+          style="z-index: 2;"
+        ></lottie-player>
+        <lottie-player
+          class="block sm:hidden"
+          src="/animation/mobile_stack_3.json"
+          ref="mobile_lottie_3"
+          id="mobile_stack_3"
+          loop
+          autoplay
+          style="z-index: 3;"
+        ></lottie-player>
+        <lottie-player
+          class="block sm:hidden"
+          src="/animation/mobile_stack_4.json"
+          ref="mobile_lottie_4"
+          id="mobile_stack_4"
+          loop
+          autoplay
+          style="z-index: 4;"
+        ></lottie-player>
+
+        <!-- END MOBILE ANIMATION -->
+        <lottie-player
+          class="hidden sm:block"
+          src="/animation/stack-1.json"
+          ref="lottie_1"
+          id="stack-1"
+          loop
+          autoplay
+          style="z-index: 1;"
+        ></lottie-player>
+        <lottie-player
+          class="hidden sm:block"
+          src="/animation/stack-2.json"
+          ref="lottie_2"
+          id="stack-2"
+          loop
+          autoplay
+          style="z-index: 2;"
+        ></lottie-player>
+        <lottie-player
+          class="hidden sm:block"
+          src="/animation/stack-3.json"
+          ref="lottie_3"
+          id="stack-3"
+          loop
+          autoplay
+          style="z-index: 3;"
+        ></lottie-player>
+        <lottie-player
+          class="hidden sm:block"
           src="/animation/stack-4.json"
           ref="lottie_4"
           id="stack-4"
           loop
           autoplay
           style="z-index: 4;"
-        ></lottie-player>
-        <lottie-player
-          src="/animation/stack-3.json"
-          ref="lottie_3"
-          id="stack-3"
-          loop
-          autoplay
-          style="z-index: 3; margin-top: -200px;"
-        ></lottie-player>
-        <lottie-player
-          src="/animation/stack-2.json"
-          ref="lottie_2"
-          id="stack-2"
-          loop
-          autoplay
-          style="z-index: 2; margin-top: -240px;"
-        ></lottie-player>
-        <lottie-player
-          src="/animation/stack-1.json"
-          ref="lottie_1"
-          id="stack-1"
-          loop
-          autoplay
-          style="z-index: 1; margin-top: -200px;"
         ></lottie-player>
       </div>
     </div>
@@ -100,7 +143,7 @@ export default class Career extends Vue {
   font-weight: 200;
   line-height: 1;
 }
-.content {
+.wwd {
   background-color: #dddddd;
 }
 .products {
@@ -125,10 +168,13 @@ export default class Career extends Vue {
   }
   .hero__text {
     font-size: 40px;
-    left: 16px;
+    left: 24px;
     top: 30%;
     transform: translate(0, -30%);
     max-width: 256px;
+  }
+  .wwd h2 {
+    font-size: 30px;
   }
 }
 </style>
