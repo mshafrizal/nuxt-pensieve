@@ -261,6 +261,52 @@
           </p>
         </div> -->
       </div>
+
+      <div class="container mx-auto px-6">
+        <div class="get-to-know flex flex-col">
+          <h2>Get to know Us</h2>
+          <p class="text-gray-pensieve text-2xl mb-5">
+            From the people who make Pensieve an amazing place to work!
+          </p>
+          <div class="flex gap-5 items-start">
+            <div class="w-1/3 flex-grow">
+              <lottie-player
+                src="/animation/button-testimoni-hanna.json"
+                ref="gtkRef-1"
+                id="gtk-1"
+                autoplay
+                class="mb-5"
+              ></lottie-player>
+              <lottie-player
+                src="/animation/button-testimoni-agung.json"
+                ref="gtkRef-2"
+                id="gtk-2"
+                autoplay
+                class="mb-5"
+              ></lottie-player>
+              <lottie-player
+                src="/animation/button-testimoni-yoana.json"
+                ref="gtkRef-3"
+                id="gtk-3"
+                autoplay
+                class="mb-5"
+              ></lottie-player>
+              <lottie-player
+                src="/animation/button-testimoni-dzaki.json"
+                ref="gtkRef-4"
+                id="gtk-3"
+                autoplay
+                class="mb-5"
+              ></lottie-player>
+            </div>
+            <div class="flex-grow-0">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt voluptatum nobis ipsam
+              aperiam hic, accusantium consectetur excepturi modi? Corrupti nesciunt nobis dolore
+              sunt vitae expedita hic eveniet iusto eos velit.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
