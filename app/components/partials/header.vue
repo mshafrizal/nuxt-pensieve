@@ -3,15 +3,29 @@
     <div class="header__logo">
       <nuxt-link to="/">
         <img
-          class="w-24"
+          class="w-24 hidden md:block"
           src="https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/pensieve-logo-green_-JWIJpk9N.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1669439827352"
           alt="Logo"
+        />
+        <img
+          class="block md:hidden w-4"
+          src="https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/footer-1-P__Mq5GDDmgc.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1669442171601"
+          alt="Pensieve Logo"
         />
       </nuxt-link>
     </div>
 
     <nav class="nav ml-auto">
-      <ul class="flex flex-row items-center sm:mt-4 sm:pt-4 md:mt-0 md:pt-0 md:mr-4 lg:mr-8">
+      <button
+        @click="onNavMobileClick"
+        @keydown="onNavMobileClick"
+        class="flex md:hidden cursor-pointer p-1 hover:bg-gray-400"
+      >
+        <img src="~assets/icons/menu.svg" alt="menu" class="w-5 h-5" />
+      </button>
+      <ul
+        class="hidden md:flex flex-row items-center sm:mt-4 sm:pt-4 md:mt-0 md:pt-0 md:mr-4 lg:mr-8"
+      >
         <li>
           <nuxt-link to="/about" class="block text-white font-medium px-4 py-1 md:p-2 lg:px-4">
             About

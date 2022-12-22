@@ -1,5 +1,5 @@
 <template>
-  <main :class="[$route.name]" class="main md:px-0">
+  <main :class="[$route.name]" class="main">
     <site-header />
     <nuxt class="nuxt" />
     <site-footer />
@@ -52,6 +52,7 @@ export default class DefaultLayout extends Vue {
 <style lang="scss">
 * {
   font-family: 'Archivo';
+  font-weight: 200;
 }
 .divider {
   position: relative;
