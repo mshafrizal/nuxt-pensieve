@@ -38,3 +38,15 @@ interface BlogPost {
 
   image_url: string;
 }
+
+type HTMLElementLottie = HTMLElement & {
+  setDirection(direction: number): void;
+  play(): void;
+  playSegments(segments: number[] | number[][], forceFlag?: boolean): void;
+  getLottie(): Promise<{
+    playSegments(segments: number[] | number[][], forceFlag?: boolean): void;
+    goToAndStop(value: number, isFrame: boolean): void;
+    goToAndPlay(value: number, isFrame: boolean): void;
+    totalFrames: number;
+  }>;
+};
