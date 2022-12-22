@@ -52,6 +52,7 @@ export default class DefaultLayout extends Vue {
 <style lang="scss">
 * {
   font-family: 'Archivo';
+  font-weight: 200;
 }
 .divider {
   position: relative;
