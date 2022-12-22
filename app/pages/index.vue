@@ -66,13 +66,13 @@ export default class Home extends Vue {
     email: '',
   };
 
-  encode(data): string {
+  encode(data: Record<string, string | number | boolean>): string {
     return Object.keys(data)
       .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
       .join('&');
   }
 
-  validEmail(email): boolean {
+  validEmail(email: string): boolean {
     // eslint-disable-next-line
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
@@ -80,7 +80,6 @@ export default class Home extends Vue {
 
   async handleSubmit(): Promise<void> {
     if (!this.validEmail(this.form.email)) {
-      this.$refs.emailInput.focus();
       return;
     }
 
@@ -99,16 +98,16 @@ export default class Home extends Vue {
 
   mounted(): void {
     if (process.browser) {
-      window.addEventListener('load', async function () {
+      window.addEventListener('load', async () => {
         const lottie = document.getElementById('lottieBtn') as HTMLElementLottie;
         // const { lottie } = this.$refs;
         if (lottie) {
           const lottieInstance = await lottie.getLottie();
-          lottie.addEventListener('mouseenter', function (): void {
+          lottie.addEventListener('mouseenter', (): void => {
             lottieInstance.playSegments([0, 15], true);
           });
 
-          lottie.addEventListener('mouseout', function (): void {
+          lottie.addEventListener('mouseout', (): void => {
             lottieInstance.playSegments([15, 30], true);
           });
           // create({

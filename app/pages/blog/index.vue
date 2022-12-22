@@ -102,7 +102,13 @@ export default class BlogIndex extends Vue {
 
   blogSample: BlogPost | null = null;
 
-  async asyncData({ params, store }) {
+  async asyncData({
+    params,
+    store,
+  }: {
+    params: any;
+    store: any;
+  }): Promise<Record<string, unknown>> {
     const page: number = params.page ? parseInt(params.page, 10) : 1;
     const { perPage }: { perPage: number } = store.state;
     const range = page * perPage;
@@ -124,16 +130,16 @@ export default class BlogIndex extends Vue {
 
   mounted(): void {
     if (process.browser) {
-      window.addEventListener('load', async function () {
+      window.addEventListener('load', async () => {
         const lottie = document.getElementById('lottieBtn') as HTMLElementLottie;
         // const { lottie } = this.$refs;
         if (lottie) {
           const lottieInstance = await lottie.getLottie();
-          lottie.addEventListener('mouseenter', function (): void {
+          lottie.addEventListener('mouseenter', (): void => {
             lottieInstance.playSegments([0, 15], true);
           });
 
-          lottie.addEventListener('mouseout', function (): void {
+          lottie.addEventListener('mouseout', (): void => {
             lottieInstance.playSegments([15, 30], true);
           });
         }

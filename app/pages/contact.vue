@@ -87,7 +87,7 @@ export default class Home extends Vue {
     message: '',
   };
 
-  encode(data: any): string {
+  encode(data: Record<string, string | number | boolean>): string {
     return Object.keys(data)
       .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
       .join('&');
@@ -101,7 +101,6 @@ export default class Home extends Vue {
 
   async handleSubmit(): Promise<void> {
     if (!this.validEmail(this.form.email)) {
-      this.$refs.emailInput.focus();
       return;
     }
 
