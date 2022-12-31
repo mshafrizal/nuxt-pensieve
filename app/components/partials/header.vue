@@ -72,6 +72,14 @@ export default class Header extends Vue {
   get pages(): Page[] {
     return this.$store.state.pages;
   }
+
+  get navMobileState(): boolean {
+    return this.$store.state.navMobileState;
+  }
+
+  onNavMobileClick(): void {
+    this.$store.dispatch('UPDATE_NAV_MOBILE_STATE', !this.navMobileState);
+  }
 }
 </script>
 

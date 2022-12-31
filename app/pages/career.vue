@@ -7,11 +7,8 @@
     </div>
 
     <div class="content pt-24 pb-64 flex flex-col">
-      <div
-        id="first-section"
-        class="container mx-auto flex flex-col sm:flex-row justify-between mb-8"
-      >
-        <div class="w-full flex flex-col px-6">
+      <div id="first-section" class="container mx-auto grid grid-cols-1 md:grid-cols-2 mb-8">
+        <div class="w-full flex flex-col px-6 md:px-0">
           <h2 class="leading-none mb-10 font-thin">
             We are on our quest to find the most passionate people in AI and Web3
           </h2>
@@ -25,18 +22,6 @@
             ref="lottie"
             id="firstCta"
           ></lottie-player>
-        </div>
-        <div class="hidden w-1/3 md:flex justify-end items-start">
-          <div class="relative mission">
-            <div class="box box-top"></div>
-            <div class="text-2xl p-6">
-              Our mission is a big mission, and a big mission requires a great team.
-              <br />
-              <br />
-              So, whatever that bar is for a great team in your head, let’s raise that.
-            </div>
-            <div class="box box-bot"></div>
-          </div>
         </div>
       </div>
 
@@ -305,6 +290,7 @@ export default class Career extends Vue {
 
   mounted(): void {
     if (process.browser) {
+      console.log(Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0));
       window.addEventListener('load', async () => {
         const lottie = document.getElementById('firstCta') as HTMLElementLottie;
         if (lottie) {
@@ -338,11 +324,12 @@ export default class Career extends Vue {
   position: absolute;
   text-align: left;
   top: 50%;
-  left: 80px;
-  transform: translate(0, -50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
   width: 100%;
-  max-width: 936px;
+  max-width: 1140px;
+  margin: 0 auto;
   font-size: 80px;
   font-weight: 200;
   line-height: 1;
@@ -394,6 +381,12 @@ export default class Career extends Vue {
   max-width: 400px;
   width: 100%;
 }
+h2 {
+  font-size: 60px;
+}
+p {
+  font-size: 26px;
+}
 @media only screen and (max-width: 600px) {
   .hero {
     height: 576px;
@@ -425,6 +418,11 @@ export default class Career extends Vue {
     max-width: none;
     width: calc(100% - 48px);
     margin: 0 auto;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1140px;
   }
 }
 </style>
