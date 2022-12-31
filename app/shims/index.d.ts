@@ -44,6 +44,7 @@ type HTMLElementLottie = HTMLElement & {
   play(): void;
   playSegments(segments: number[] | number[][], forceFlag?: boolean): void;
   getLottie(): Promise<{
+    play(): void;
     playSegments(segments: number[] | number[][], forceFlag?: boolean): void;
     goToAndStop(value: number, isFrame: boolean): void;
     goToAndPlay(value: number, isFrame: boolean): void;

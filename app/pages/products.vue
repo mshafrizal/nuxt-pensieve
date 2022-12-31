@@ -15,78 +15,24 @@
         <!-- MOBILE ANIMATION -->
         <lottie-player
           class="block sm:hidden"
-          src="/animation/mobile_stack_1.json"
+          src="/animation/products_mobile.json"
           ref="mobile_lottie_1"
-          id="mobile_stack_1"
+          id="lottie-mobile"
           loop
-          autoplay
-          style="z-index: 1;"
-        ></lottie-player>
-        <lottie-player
-          class="block sm:hidden"
-          src="/animation/mobile_stack_2.json"
-          ref="mobile_lottie_2"
-          id="mobile_stack_2"
-          loop
-          autoplay
-          style="z-index: 2;"
-        ></lottie-player>
-        <lottie-player
-          class="block sm:hidden"
-          src="/animation/mobile_stack_3.json"
-          ref="mobile_lottie_3"
-          id="mobile_stack_3"
-          loop
-          autoplay
-          style="z-index: 3;"
-        ></lottie-player>
-        <lottie-player
-          class="block sm:hidden"
-          src="/animation/mobile_stack_4.json"
-          ref="mobile_lottie_4"
-          id="mobile_stack_4"
-          loop
-          autoplay
           style="z-index: 4;"
         ></lottie-player>
 
         <!-- END MOBILE ANIMATION -->
-        <lottie-player
-          class="hidden sm:block"
-          src="/animation/stack-1.json"
-          ref="lottie_1"
-          id="stack-1"
-          loop
-          autoplay
-          style="z-index: 1;"
-        ></lottie-player>
-        <lottie-player
-          class="hidden sm:block"
-          src="/animation/stack-2.json"
-          ref="lottie_2"
-          id="stack-2"
-          loop
-          autoplay
-          style="z-index: 2;"
-        ></lottie-player>
-        <lottie-player
-          class="hidden sm:block"
-          src="/animation/stack-3.json"
-          ref="lottie_3"
-          id="stack-3"
-          loop
-          autoplay
-          style="z-index: 3;"
-        ></lottie-player>
-        <lottie-player
-          class="hidden sm:block"
-          src="/animation/stack-4.json"
-          ref="lottie_4"
-          id="stack-4"
-          loop
-          autoplay
-          style="z-index: 4;"
-        ></lottie-player>
+        <div ref="desktopStackAnimationRef" id="desktopStackAnimation" class="flex flex-col">
+          <lottie-player
+            class="hidden sm:block"
+            src="/animation/products.json"
+            ref="lottie_4"
+            id="lottie-desktop"
+            loop
+            style="z-index: 4;"
+          ></lottie-player>
+        </div>
       </div>
     </div>
     <div class="products">
@@ -117,6 +63,58 @@ import settings from '@/content/settings/general.json';
 })
 export default class Career extends Vue {
   services = settings.services;
+
+  scrollTop = 0;
+
+  lastScrollTop = 0;
+
+  stackPos: number[] = [];
+
+  loaded = false;
+
+  async handleScroll(): Promise<void> {
+    this.scrollTop = window.scrollY;
+    const scroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scroll > this.lastScrollTop) {
+      if (this.scrollTop > 600 && !this.loaded) {
+        const desktopLottie = document.getElementById('lottie-desktop') as HTMLElementLottie;
+        const mobileLottie = document.getElementById('lottie-mobile') as HTMLElementLottie;
+
+        if (desktopLottie) {
+          const lottieInstance = await desktopLottie.getLottie();
+          desktopLottie.classList.add('fade-in');
+          desktopLottie.addEventListener('complete', () => {
+            lottieInstance.goToAndPlay(32, true);
+          });
+          lottieInstance.play();
+        }
+
+        if (mobileLottie) {
+          const lottieInstance = await mobileLottie.getLottie();
+          mobileLottie.classList.add('fade-in');
+          desktopLottie.addEventListener('complete', () => {
+            lottieInstance.goToAndPlay(32, true);
+          });
+          lottieInstance.play();
+        }
+        this.loaded = true;
+      }
+    }
+    this.lastScrollTop = scroll <= 0 ? 0 : scroll;
+  }
+
+  created(): void {
+    if (process.client) {
+      window.addEventListener('scroll', this.handleScroll);
+    }
+  }
+
+  destroyed(): void {
+    if (process.client) {
+      window.removeEventListener('scroll', this.handleScroll);
+    }
+  }
 }
 </script>
 
@@ -162,6 +160,9 @@ export default class Career extends Vue {
   color: #808080;
   margin-bottom: 66px;
 }
+#desktopStackAnimation {
+  min-height: 400px;
+}
 @media only screen and (max-width: 600px) {
   .hero {
     height: 576px;
@@ -182,5 +183,15 @@ export default class Career extends Vue {
   .products h2 {
     font-size: 30px;
   }
+}
+#lottie-desktop,
+#lottie-mobile {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+#lottie-desktop.fade-in,
+#lottie-mobile.fade-in {
+  opacity: 1;
 }
 </style>
