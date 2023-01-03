@@ -3,20 +3,16 @@
     <div class="hero">
       <div class="hero__text container mx-auto flex flex-col">
         <h1 class="text-6xl text-white mb-4">
-          Welcome to <br />
-          Pensieve Blog!
+          Pensieve Blog: From Tech Insights to Thought Leadership
         </h1>
         <p class="text-2xl text-white mb-20">Get newest article about latest technology</p>
-        <!-- <div class="w-64">
+        <div class="w-64">
           <lottie-player
-            src="/animation/home-button.json"
+            src="/animation/button-blog.json"
             ref="lottie"
             id="lottieBtn"
           ></lottie-player>
-        </div> -->
-        <button class="bg-gray-400 border-2 border-black uppercase text-black w-1/6 py-3">
-          Subscribe
-        </button>
+        </div>
       </div>
     </div>
 
@@ -132,7 +128,6 @@ export default class BlogIndex extends Vue {
     if (process.browser) {
       window.addEventListener('load', async () => {
         const lottie = document.getElementById('lottieBtn') as HTMLElementLottie;
-        // const { lottie } = this.$refs;
         if (lottie) {
           const lottieInstance = await lottie.getLottie();
           lottie.addEventListener('mouseenter', (): void => {

@@ -110,26 +110,6 @@ export default class Home extends Vue {
           lottie.addEventListener('mouseout', (): void => {
             lottieInstance.playSegments([15, 30], true);
           });
-          // create({
-          //   mode: 'cursor',
-          //   player: '#lottieBtn',
-          //   actions: [
-          //     {
-          //       type: 'hold',
-          //       frames: [0, 15],
-          //     },
-          //     // {
-          //     //   position: { x: 1, y: 1 },
-          //     //   type: 'seek',
-          //     //   frames: [0, 15],
-          //     // },
-          //     // {
-          //     //   position: { x: -1, y: -1 },
-          //     //   type: 'seek',
-          //     //   frames: [15, 30],
-          //     // },
-          //   ],
-          // });
         }
       });
     }
