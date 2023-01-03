@@ -1,13 +1,14 @@
 <template>
   <div class="blog-item">
-    <img :src="blogPost.image_url" alt="blog image" />
+    <img id="blogimage" :src="blogPost.image_url" alt="blog image" />
     <div class="flex flex-col p-6">
-      <p class="underline mb-6">{{ blogPost.tag }}</p>
-      <h1 class="text-2xl">{{ blogPost.title }}</h1>
+      <p id="blogtag" class="underline font-sinter-bold mb-6">{{ blogPost.tag }}</p>
+      <h1 id="blogtitle">{{ blogPost.title }}</h1>
       <div class="flex gap-4 mb-20">
-        <span>{{ blogPost.created_at }} &centerdot; {{ blogPost.read_length }}</span>
+        <span id="blogcreateddate" class="font-sinter">{{ blogPost.created_at }}</span
+        >&centerdot;<span id="blogreadlength" class="font-sinter">{{ blogPost.read_length }}</span>
       </div>
-      <p>{{ blogPost.content }}</p>
+      <p id="blogcontent">{{ blogPost.content }}</p>
     </div>
   </div>
 </template>
@@ -30,10 +31,37 @@ export default class BlogItem extends Vue {
   display: flex;
   flex-direction: column;
   border: 1px solid #c4c4c4;
+  transition: filter 1s;
   &:hover {
     border: 1px solid #000000;
     cursor: pointer;
+    #blogimage {
+      filter: grayscale(0);
+    }
   }
-  font-family: 'Archivo';
+  #blogimage {
+    aspect-ratio: 4 / 3;
+    transition: filter 1s;
+    filter: grayscale(1);
+  }
+  #blogtag {
+    color: #857bff;
+    font-size: 18px;
+  }
+  #blogtitle {
+    font-size: 26px;
+  }
+  #blogcreateddate,
+  #blogreadlength {
+    font-size: 18px;
+  }
+  #blogcreateddate,
+  #blogreadlength,
+  #blogcontent {
+    color: #808080;
+  }
+  #blogcontent {
+    font-size: 24px;
+  }
 }
 </style>

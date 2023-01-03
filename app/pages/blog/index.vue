@@ -171,6 +171,10 @@ export default class BlogIndex extends Vue {
   transform: translate(0, -50%);
   color: white;
   width: 100%;
+  max-width: 1280px;
+  font-size: 80px;
+  font-weight: 200;
+  line-height: 1;
 }
 .content {
   background-color: #dddddd;
