@@ -1,5 +1,5 @@
 <template>
-  <header class="flex items-center px-4 py-4 md:py-8 relative">
+  <header class="flex items-center px-4 py-3 md:px-10 md:py-8 relative">
     <div class="header__logo">
       <nuxt-link to="/">
         <img
@@ -24,30 +24,36 @@
         <img src="~assets/icons/menu.svg" alt="menu" class="w-5 h-5" />
       </button>
       <ul
-        class="hidden md:flex flex-row items-center sm:mt-4 sm:pt-4 md:mt-0 md:pt-0 md:mr-4 lg:mr-8"
+        class="hidden md:flex flex-row items-center sm:mt-4 sm:pt-4 md:mt-0 md:pt-0 md:mr-4 lg:mr-0"
       >
         <li>
-          <nuxt-link to="/about" class="block font-medium px-4 py-1 md:p-2 lg:px-4">
+          <nuxt-link to="/about" class="block font-magistral font-medium px-4 py-1 md:p-2 lg:px-4">
             About
           </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/products" class="block font-medium px-4 py-1 md:p-2 lg:px-4">
+          <nuxt-link
+            to="/products"
+            class="block font-magistral font-medium px-4 py-1 md:p-2 lg:px-4"
+          >
             Products
           </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/blog" class="block font-medium px-4 py-1 md:p-2 lg:px-4">
+          <nuxt-link to="/blog" class="block font-magistral font-medium px-4 py-1 md:p-2 lg:px-4">
             Blog
           </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/career" class="block font-medium px-4 py-1 md:p-2 lg:px-4">
+          <nuxt-link to="/career" class="block font-magistral font-medium px-4 py-1 md:p-2 lg:px-4">
             Career
           </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/contact" class="block font-medium px-4 py-1 md:p-2 lg:px-4">
+          <nuxt-link
+            to="/contact"
+            class="block font-magistral font-medium px-4 py-1 md:p-2 lg:px-4"
+          >
             Contact
           </nuxt-link>
         </li>
@@ -88,7 +94,6 @@ export default class Header extends Vue {
   ul li > a {
     &.nuxt-link-active {
       color: $bluise;
-      @apply font-bold;
     }
   }
 }

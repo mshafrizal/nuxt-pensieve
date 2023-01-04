@@ -1,8 +1,8 @@
 <template>
-  <section class="home container mx-auto px-4 sm:px-0">
+  <section class="home container mx-auto px-8 sm:px-0">
     <div class="md:py-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
       <div class="flex flex-col w-full lg:w-3/5 justify-center lg:items-start overflow-y-hidden">
-        <h1 class="text-2xl lg:text-5xl md:px-10 md:mb-10">
+        <h1 id="title" class="md:mb-10">
           Unlock Your 100% Data Potential with AI-Driven Solutions for Your Organization
         </h1>
         <img
@@ -11,11 +11,11 @@
           src="https://ik.imagekit.io/vin64b9qvp9/pensieveassets/animation/home-sphere_xJtsf4nOh.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1669442264204"
           style="max-height: 335px; max-width: 335px;"
         />
-        <p class="md:text-2xl mb-2 md:mb-6 md:px-10" style="color: #656565;">
+        <p class="md:text-2xl mb-2 md:mb-6" style="color: #656565;">
           Enable faster insight generation with Pensieve’s AI solutions for emerging-market
           government and enterprise
         </p>
-        <div class="mb-12 xl:mb-0 md:px-10">
+        <div class="xl:mb-0">
           <lottie-player
             src="/animation/home-button.json"
             ref="lottie"
@@ -116,3 +116,9 @@ export default class Home extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+#title {
+  font-size: 35px;
+}
+</style>

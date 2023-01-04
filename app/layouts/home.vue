@@ -22,28 +22,26 @@
         </li>
       </ul>
     </nav>
-    <div class="container mx-auto">
-      <site-header />
-      <nuxt class="nuxt" />
-    </div>
+    <header-home />
+    <nuxt class="nuxt" />
 
     <!-- <svg class="divider -mx-4 sm:mx-0" width="100%" viewBox="0 0 10 1">
       <polygon stroke="none" stroke-width="0" fill="#0b3765" points="0,0.6 0,1 10,1 10,0" />
     </svg> -->
 
-    <site-footer />
+    <footer-home />
   </main>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Watch } from 'nuxt-property-decorator';
-import SiteHeader from '@/components/partials/headerHome.vue';
-import SiteFooter from '@/components/partials/footerHome.vue';
+import HeaderHome from '@/components/partials/headerHome.vue';
+import FooterHome from '@/components/partials/footerHome.vue';
 
 @Component({
   components: {
-    SiteHeader,
-    SiteFooter,
+    HeaderHome,
+    FooterHome,
   },
 })
 export default class DefaultLayout extends Vue {

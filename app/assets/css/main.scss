@@ -8,9 +8,9 @@ body {
 .main, .main-home {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   @media screen and (max-width: 500px) {
-    max-height: 100vh;
+    overflow: hidden;
   }
 }
 
@@ -73,4 +73,7 @@ body {
   font-family: sinter,sans-serif;
   font-weight: 700;
   font-style: normal;
+}
+.font-magistral {
+  font-family: 'Magistral', sans-serif;
 }
