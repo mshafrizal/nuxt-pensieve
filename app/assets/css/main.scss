@@ -77,3 +77,32 @@ body {
 .font-magistral {
   font-family: 'Magistral', sans-serif;
 }
+
+.nav--mobile {
+  font-family: 'Archivo';
+  font-weight: 200;
+  font-size: 20px;
+  position: fixed;
+  top: 60px;
+  right: -220px;
+  width: 220px;
+  height: 100%;
+  z-index: 20;
+  // background: #ffffff 0% 0% no-repeat padding-box;
+  opacity: 1;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  padding: 40px;
+  transition: 1s;
+  ul {
+    li {
+      margin-bottom: 20px;
+      a {
+        &:hover {
+          color: #00ff00;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

@@ -290,7 +290,6 @@ export default class Career extends Vue {
 
   mounted(): void {
     if (process.browser) {
-      console.log(Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0));
       window.addEventListener('load', async () => {
         const lottie = document.getElementById('firstCta') as HTMLElementLottie;
         if (lottie) {

@@ -1,5 +1,27 @@
 <template>
   <main :class="[$route.name]" class="main">
+    <nav id="navMobile" class="nav--mobile">
+      <ul>
+        <li>
+          <nuxt-link to="/">Home</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/about">About</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/products">Products</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/blog">Blog</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/career">Career</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/contact">Contact</nuxt-link>
+        </li>
+      </ul>
+    </nav>
     <site-header />
     <nuxt class="nuxt" />
     <site-footer />
@@ -12,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator';
+import { Component, Vue, Watch } from 'nuxt-property-decorator';
 import SiteHeader from '@/components/partials/header.vue';
 import SiteFooter from '@/components/partials/footer.vue';
 
@@ -29,6 +51,10 @@ export default class DefaultLayout extends Vue {
 
   scrolled = 0;
 
+  get navMobileState(): boolean {
+    return this.$store.state.navMobileState;
+  }
+
   mounted(): void {
     if (process.client) {
       window.onscroll = () => {
@@ -44,6 +70,18 @@ export default class DefaultLayout extends Vue {
     const bar = document.getElementById('bar');
     if (bar) {
       bar.style.width = `${this.scrolled}%`;
+    }
+  }
+
+  @Watch('navMobileState')
+  onNavMobileStateChange(val: boolean): void {
+    const navMobileEl: HTMLElement | null = document.getElementById('navMobile');
+    if (navMobileEl) {
+      if (val) {
+        navMobileEl.style.right = '0px';
+      } else {
+        navMobileEl.style.right = '-220px';
+      }
     }
   }
 }

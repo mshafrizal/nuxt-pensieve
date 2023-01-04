@@ -68,8 +68,6 @@ export default class Career extends Vue {
 
   lastScrollTop = 0;
 
-  stackPos: number[] = [];
-
   loaded = false;
 
   async handleScroll(): Promise<void> {

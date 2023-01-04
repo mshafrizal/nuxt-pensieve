@@ -17,6 +17,7 @@
         </p>
         <div class="xl:mb-0">
           <lottie-player
+            class="cursor-pointer"
             @click="$router.push('/about')"
             src="/animation/button-home.json"
             ref="lottie"
