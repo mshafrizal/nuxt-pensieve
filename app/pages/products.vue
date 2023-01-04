@@ -11,7 +11,7 @@
 
     <div class="wwd py-16 pl-6 flex flex-col">
       <div class="container mx-auto flex flex-col sm:mb-48">
-        <h2 class="text-4xl font-thin">What We Deliver</h2>
+        <h2 class="font-thin">What We Deliver</h2>
         <!-- MOBILE ANIMATION -->
         <lottie-player
           class="block sm:hidden"
@@ -191,5 +191,9 @@ export default class Career extends Vue {
 #lottie-desktop.fade-in,
 #lottie-mobile.fade-in {
   opacity: 1;
+}
+.wwd h2,
+.products h2 {
+  font-size: 66px;
 }
 </style>
