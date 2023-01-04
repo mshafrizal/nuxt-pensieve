@@ -16,12 +16,12 @@
     </div>
 
     <nav class="nav ml-auto">
-      <button
-        @click="onNavMobileClick"
-        @keydown="onNavMobileClick"
-        class="flex md:hidden cursor-pointer p-1 hover:bg-gray-400"
-      >
-        <img src="~assets/icons/menu.svg" alt="menu" class="w-5 h-5" />
+      <button id="menuBtn" class="flex md:hidden cursor-pointer p-1 hover:bg-gray-400">
+        <lottie-player
+          src="/animation/hamburger.json"
+          ref="menuLottie"
+          id="menuLottie"
+        ></lottie-player>
       </button>
       <ul
         class="hidden md:flex flex-row items-center sm:mt-4 sm:pt-4 md:mt-0 md:pt-0 md:mr-4 lg:mr-0"
@@ -86,6 +86,25 @@ export default class Header extends Vue {
   onNavMobileClick(): void {
     this.$store.dispatch('UPDATE_NAV_MOBILE_STATE', !this.navMobileState);
   }
+
+  mounted(): void {
+    if (process.browser) {
+      window.addEventListener('load', async () => {
+        const lottie = document.getElementById('menuLottie') as HTMLElementLottie;
+        if (lottie) {
+          const lottieInstance = await lottie.getLottie();
+          lottie.addEventListener('click', (): void => {
+            this.onNavMobileClick();
+            if (this.navMobileState) {
+              lottieInstance.playSegments([16, 30], true);
+            } else {
+              lottieInstance.playSegments([31, 43], true);
+            }
+          });
+        }
+      });
+    }
+  }
 }
 </script>
 
@@ -96,5 +115,8 @@ export default class Header extends Vue {
       color: $bluise;
     }
   }
+}
+#menuBtn:focus {
+  outline: none;
 }
 </style>
