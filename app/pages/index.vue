@@ -9,7 +9,7 @@
           class="flex lg:hidden mx-auto md:mb-10"
           alt="Planet"
           src="https://ik.imagekit.io/vin64b9qvp9/pensieveassets/animation/home-sphere_xJtsf4nOh.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1669442264204"
-          style="max-height: 335px; max-width: 335px;"
+          style="max-height: 300px; max-width: 300px;"
         />
         <p class="md:text-2xl mb-2 md:mb-6" style="color: #656565;">
           Enable faster insight generation with Pensieve’s AI solutions for emerging-market
@@ -17,7 +17,8 @@
         </p>
         <div class="xl:mb-0">
           <lottie-player
-            src="/animation/home-button.json"
+            @click="$router.push('/about')"
+            src="/animation/button-home.json"
             ref="lottie"
             id="lottieBtn"
           ></lottie-player>
