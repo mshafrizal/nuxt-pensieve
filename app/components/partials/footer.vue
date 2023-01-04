@@ -1,12 +1,15 @@
 <template>
   <footer class="footer flex items-center px-6 sm:px-0 py-10 sm:py-0">
     <div class="container mx-auto flex flex-col items-center w-full">
-      <div class="flex justify-between w-full">
+      <div class="flex justify-between w-full mb-10">
         <img
           src="https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/pensieve-logo-black_wwWueRMhu.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1669442167496"
           alt="Pensieve P Logo"
           class="w-32"
         />
+
+        <p class="hidden md:flex text-xs">2022 Pensieve • All Rights Reserved</p>
+
         <div class="flex gap-6">
           <img
             src="https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/footer-2-instagram_ct-jXfnbq.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1669442175603"
@@ -25,7 +28,7 @@
           />
         </div>
       </div>
-      <p class="text-xs">2022 Pensieve • All Rights Reserved</p>
+      <p class="flex md:hidden text-xs">2022 Pensieve • All Rights Reserved</p>
     </div>
   </footer>
 </template>
