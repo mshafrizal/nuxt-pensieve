@@ -1,11 +1,11 @@
 <template>
   <div class="get-to-know flex flex-col">
-    <h2>Get to know Us</h2>
+    <h2 class="get-to-know-title">Get to know Us</h2>
     <p class="text-gray-pensieve text-2xl mb-5">
       From the people who make Pensieve an amazing place to work!
     </p>
     <div class="flex gap-5 items-start">
-      <div class="w-1/3">
+      <div class="w-1/3 grid grid-cols-1 md:grid-cols-2 gap-2">
         <lottie-player
           src="/animation/button-testimoni-hanna.json"
           ref="gtkRef1"
@@ -98,3 +98,15 @@ export default class GetToKnowSection extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.get-to-know-title {
+  font-size: 30px;
+}
+
+@media (min-width: 1280px) {
+  .get-to-know-title {
+    font-size: 66px;
+  }
+}
+</style>

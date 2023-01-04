@@ -5,13 +5,19 @@ body {
   @apply subpixel-antialiased;
 }
 
-.main, .main-home {
+.main-home {
   display: flex;
   flex-direction: column;
   height: 100vh;
   @media screen and (max-width: 500px) {
     overflow: hidden;
   }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .main-home {

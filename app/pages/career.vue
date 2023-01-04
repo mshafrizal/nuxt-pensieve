@@ -18,12 +18,18 @@
           </p>
           <lottie-player
             class="mb-10"
-            src="/animation/home-button.json"
+            src="/animation/button-career.json"
             ref="lottie"
             id="firstCta"
           ></lottie-player>
         </div>
       </div>
+
+      <img
+        class="hidden md:flex mb-24 md:mb-48"
+        src="https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/photo-1_7DB0eMIDK.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669439818161"
+        alt="decoration"
+      />
 
       <div class="container px-6 mx-auto mb-24 md:mb-64 flex flex-col sm:flex-row justify-between">
         <div class="flex flex-col">
@@ -34,13 +40,19 @@
             from the ground up.
           </p>
         </div>
-        <!-- <div class="p-6 border-2 border-black">
-          <p class="text-2xl font-mono hiring-text-r">
-            We believe in hiring people that are the right fit for our culture and our team, which
-            is why we’ve designed our hiring process to be as simple, clear, and transparent as
-            possible.
-          </p>
-        </div> -->
+
+        <div class="px-6 hidden lg:flex mb-24">
+          <div class="relative mission">
+            <div class="box box-top"></div>
+            <div class="text-2xl p-6">
+              Our mission is a big mission, and a big mission requires a great team.
+              <br />
+              <br />
+              So, whatever that bar is for a great team in your head, let’s raise that.
+            </div>
+            <div class="box box-bot"></div>
+          </div>
+        </div>
       </div>
 
       <div class="px-6 md:hidden mb-24">
@@ -57,7 +69,7 @@
       </div>
 
       <img
-        class="mb-24 md:mb-48"
+        class="md:hidden mb-24 md:mb-48"
         src="https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/photo-1_7DB0eMIDK.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669439818161"
         alt="decoration"
       />
@@ -136,7 +148,7 @@
           <h2 class="text-5xl mb-8">Core Values</h2>
           <div class="flex items-start mb-12">
             <div
-              class="border border-black rounded-full w-36 h-36 flex items-center justify-center flex-grow mr-8 mb-10 timeline-dot"
+              class="border border-black rounded-full w-36 h-36 flex items-center justify-center mr-8 mb-10 timeline-dot"
             >
               <lottie-player
                 src="/animation/value-1.json"
@@ -238,13 +250,21 @@
             </div>
           </div>
         </div>
-        <!-- <div class="border border-black core-values-r p-8">
-          <p class="font-mono text-2xl">
-            Pensieve is all about creating an environment where you can thrive and grow. Our company
-            values work as guiding principles that keep us in sync with one another and our clients
-            for the most excellent results.
-          </p>
-        </div> -->
+
+        <div class="px-6 mb-24">
+          <div class="relative core-values">
+            <div class="box box-top"></div>
+            <div class="text-2xl p-6">
+              Pensieve is all about creating an environment where you can thrive and grow.
+              <br />
+              <br />
+              Our company values work as guiding principles that keep us in sync with one another
+              and our clients for the most excellent results. So, whatever that bar is for a great
+              team in your head, let’s raise that.
+            </div>
+            <div class="box box-bot"></div>
+          </div>
+        </div>
       </div>
 
       <div class="container mx-auto px-6">
@@ -418,10 +438,22 @@ p {
     width: calc(100% - 48px);
     margin: 0 auto;
   }
+  .core-values {
+    width: 278px;
+    margin: 0 auto;
+  }
 }
 @media (min-width: 1280px) {
   .container {
     max-width: 1140px;
+  }
+  #firstCta {
+    margin-top: 60px;
+    max-width: 300px;
+  }
+  .core-values {
+    width: 300px;
+    margin-top: 120px;
   }
 }
 </style>
