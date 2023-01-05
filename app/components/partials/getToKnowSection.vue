@@ -1,6 +1,6 @@
 <template>
   <div class="get-to-know py-24">
-    <div class="flex flex-col container mx-auto">
+    <div class="flex flex-col container mx-auto px-6 sm:px-0">
       <h2 class="get-to-know-title">Get to know Us</h2>
       <p class="text-gray-pensieve text-2xl mb-5">
         From the people who make Pensieve an amazing place to work!
