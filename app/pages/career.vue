@@ -7,7 +7,7 @@
     </div>
 
     <div class="content pt-24 pb-64 flex flex-col">
-      <div id="first-section" class="container mx-auto grid grid-cols-1 md:grid-cols-2 mb-8">
+      <div id="first-section" class="container mx-auto grid grid-cols-1 lg:grid-cols-2 mb-8">
         <div class="w-full flex flex-col px-6 md:px-0">
           <h2 class="leading-none mb-10 font-thin">
             We are on our quest to find the most passionate people in AI and Web3
@@ -16,12 +16,7 @@
             If you’re seeking for a playground to experiment with deep tech, AI and Web3 solutions
             for government and companies, you’ve come to the perfect spot!
           </p>
-          <lottie-player
-            class="mb-10"
-            src="/animation/button-career.json"
-            ref="lottie"
-            id="firstCta"
-          ></lottie-player>
+          <career-cta></career-cta>
         </div>
       </div>
 
@@ -31,7 +26,9 @@
         alt="decoration"
       />
 
-      <div class="container px-6 mx-auto mb-24 md:mb-64 flex flex-col sm:flex-row justify-between">
+      <div
+        class="container px-6 sm:px-16 lg:px-0 lg:px-0 mx-auto mb-24 md:mb-64 flex flex-col sm:flex-row justify-between"
+      >
         <div class="flex flex-col">
           <h2 class="md:text-5xl mb-8">Our Hiring Process</h2>
           <p class="md:text-2xl text-gray-pensieve hiring-text-l">
@@ -74,9 +71,9 @@
         alt="decoration"
       />
 
-      <div class="container mx-auto px-6 mb-24 md:mb-56">
+      <div class="container mx-auto px-6 sm:px-16 lg:px-0 mb-24 md:mb-56">
         <h2 class="text-5xl mb-10 w-full sm:w-/12 font-thin">So, what happens once you apply?</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 font-thin">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 font-thin">
           <div class="flex flex-col">
             <div class="border border-black">
               <lottie-player
@@ -143,7 +140,9 @@
         class="mb-24 md:mb-56"
       />
 
-      <div class="container mx-auto flex flex-col sm:flex-row justify-between items-start px-6">
+      <div
+        class="container mx-auto flex flex-col sm:flex-row justify-between items-start px-6 sm:px-16 lg:px-0"
+      >
         <div class="flex flex-col core-values-l mb-8 font-thin">
           <h2 class="text-5xl mb-8">Core Values</h2>
           <div class="flex items-start mb-12">
@@ -251,7 +250,7 @@
           </div>
         </div>
 
-        <div class="px-6 mb-24">
+        <div class="px-6 mb-24 hidden lg:block">
           <div class="relative core-values">
             <div class="box box-top"></div>
             <div class="text-2xl p-6">
@@ -266,28 +265,17 @@
           </div>
         </div>
       </div>
-
-      <div class="container mx-auto px-6">
-        <get-to-know-section></get-to-know-section>
-      </div>
-      <div class="container mx-auto px-6">
-        <div class="explore-pensieve flex flex-col">
-          <h2>Explore #LifeAtPensieve</h2>
-          <p>
-            Our team has stories to tell. Access more of them on
-            <a :href="instagramURL" target="_blank">Instagram</a> and
-            <a :href="linkedinURL" target="_blank">LinkedIn</a> through #LifeAtPensieve!
-          </p>
-        </div>
-      </div>
     </div>
+    <get-to-know-section></get-to-know-section>
+    <explore-pensieve-section></explore-pensieve-section>
   </section>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import settings from '@/content/settings/general.json';
 import GetToKnowSection from '~/components/partials/getToKnowSection.vue';
+import ExplorePensieveSection from '~/components/partials/explorePensieve.vue';
+import CareerCta from '~/components/partials/careerCta.vue';
 
 type HTMLElementLottie = HTMLElement & {
   setDirection(direction: number): void;
@@ -301,28 +289,22 @@ type HTMLElementLottie = HTMLElement & {
   transition() {
     return 'slide-left';
   },
-  components: { GetToKnowSection },
+  components: { GetToKnowSection, CareerCta, ExplorePensieveSection },
 })
 export default class Career extends Vue {
-  instagramURL = settings.instagramUrl;
-
-  linkedinURL = settings.linkedinUrl;
-
-  mounted(): void {
+  async mounted(): Promise<void> {
     if (process.browser) {
-      window.addEventListener('load', async () => {
-        const lottie = document.getElementById('firstCta') as HTMLElementLottie;
-        if (lottie) {
-          const lottieInstance = await lottie.getLottie();
-          lottie.addEventListener('mouseenter', (): void => {
-            lottieInstance.playSegments([0, 15], true);
-          });
+      const lottie = document.getElementById('firstCta') as HTMLElementLottie;
+      if (lottie) {
+        const lottieInstance = await lottie.getLottie();
+        lottie.addEventListener('mouseenter', (): void => {
+          lottieInstance.playSegments([0, 15], true);
+        });
 
-          lottie.addEventListener('mouseout', (): void => {
-            lottieInstance.playSegments([15, 30], true);
-          });
-        }
-      });
+        lottie.addEventListener('mouseout', (): void => {
+          lottieInstance.playSegments([15, 30], true);
+        });
+      }
     }
   }
 }
@@ -343,12 +325,11 @@ export default class Career extends Vue {
   position: absolute;
   text-align: left;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 80px;
+  transform: translate(0, -50%);
   color: white;
   width: 100%;
-  max-width: 1140px;
-  margin: 0 auto;
+  max-width: 1280px;
   font-size: 80px;
   font-weight: 200;
   line-height: 1;
@@ -413,10 +394,10 @@ p {
   }
   .hero__text {
     font-size: 40px;
-    max-width: calc(100% - 48px);
     left: 24px;
-    top: 25%;
-    transform: translateY(-25%);
+    top: 30%;
+    transform: translateY(-30%);
+    max-width: 256px;
   }
   .content {
     padding: 96px 0px;
@@ -443,15 +424,28 @@ p {
     margin: 0 auto;
   }
 }
+@media only screen and (min-width: 601px) {
+  .hero__text,
+  #first-section {
+    max-width: 640px;
+  }
+  .core-values {
+    display: none;
+  }
+}
 @media (min-width: 1280px) {
-  .container {
-    max-width: 1140px;
+  .hero__text {
+    max-width: 1280px;
   }
   #firstCta {
     margin-top: 60px;
     max-width: 300px;
   }
+  #first-section {
+    max-width: 1280px;
+  }
   .core-values {
+    display: block;
     width: 300px;
     margin-top: 120px;
   }

@@ -28,6 +28,7 @@
   ],
   "dependencies": {
     "@lottiefiles/lottie-interactivity": "^1.6.1",
+    "@lottiefiles/lottie-js": "^0.4.1",
     "@nuxt/typescript-runtime": "^0.4.10",
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/markdownit": "^1.2.9",

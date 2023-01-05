@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer flex items-center px-6 sm:px-0 py-10 sm:py-0">
+  <footer class="footer flex items-center px-6 sm:px-16 md:px-16 lg:px-0 py-10 sm:py-0">
     <div class="container mx-auto flex flex-col items-center w-full">
       <div class="flex justify-between w-full mb-10">
         <img

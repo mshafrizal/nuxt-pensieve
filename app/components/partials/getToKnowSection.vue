@@ -1,49 +1,51 @@
 <template>
-  <div class="get-to-know flex flex-col">
-    <h2 class="get-to-know-title">Get to know Us</h2>
-    <p class="text-gray-pensieve text-2xl mb-5">
-      From the people who make Pensieve an amazing place to work!
-    </p>
-    <div class="flex gap-5 items-start">
-      <div class="w-1/3 grid grid-cols-1 md:grid-cols-2 gap-2">
-        <lottie-player
-          src="/animation/button-testimoni-hanna.json"
-          ref="gtkRef1"
-          id="gtk-1"
-          class="mb-5"
-        ></lottie-player>
-        <lottie-player
-          src="/animation/button-testimoni-agung.json"
-          ref="gtkRef2"
-          id="gtk-2"
-          class="mb-5"
-        ></lottie-player>
-        <lottie-player
-          src="/animation/button-testimoni-yoana.json"
-          ref="gtkRef3"
-          id="gtk-3"
-          class="mb-5"
-        ></lottie-player>
-        <lottie-player
-          src="/animation/button-testimoni-dzaki.json"
-          ref="gtkRef4"
-          id="gtk-4"
-          class="mb-5"
-        ></lottie-player>
-      </div>
-      <div class="w-2/3">
-        <p class="mb-6">
-          Pensieve is a place for me to learn about the startup and entrepreneurship world and grow
-          in my career and who I am as a person.
-          <br />
-          <br />
-          An expensive experience working closely with the CEO, Farina. she is a nice person and
-          provided me with an opportunity to learn more about technology, marketing, and business
-          development.
-        </p>
-        <div class="flex flex-col md:flex-row">
-          <p><strong>Hanna Annisa</strong></p>
-          <p>CEO Office Analyst</p>
+  <div class="get-to-know py-24">
+    <div class="flex flex-col container mx-auto">
+      <h2 class="get-to-know-title">Get to know Us</h2>
+      <p class="text-gray-pensieve text-2xl mb-5">
+        From the people who make Pensieve an amazing place to work!
+      </p>
+      <div class="flex gap-5 items-start">
+        <div class="w-1/3 grid grid-cols-1 md:grid-cols-2 gap-2">
+          <lottie-player
+            src="/animation/button-testimoni-hanna.json"
+            ref="gtkRef1"
+            id="gtk-1"
+            class="mb-5"
+          ></lottie-player>
+          <lottie-player
+            src="/animation/button-testimoni-agung.json"
+            ref="gtkRef2"
+            id="gtk-2"
+            class="mb-5"
+          ></lottie-player>
+          <lottie-player
+            src="/animation/button-testimoni-yoana.json"
+            ref="gtkRef3"
+            id="gtk-3"
+            class="mb-5"
+          ></lottie-player>
+          <lottie-player
+            src="/animation/button-testimoni-dzaki.json"
+            ref="gtkRef4"
+            id="gtk-4"
+            class="mb-5"
+          ></lottie-player>
+        </div>
+        <div class="w-2/3">
+          <p class="mb-6">
+            Pensieve is a place for me to learn about the startup and entrepreneurship world and
+            grow in my career and who I am as a person.
+            <br />
+            <br />
+            An expensive experience working closely with the CEO, Farina. she is a nice person and
+            provided me with an opportunity to learn more about technology, marketing, and business
+            development.
+          </p>
+          <div class="flex flex-col md:flex-row">
+            <p><strong>Hanna Annisa</strong></p>
+            <p>CEO Office Analyst</p>
+          </div>
         </div>
       </div>
     </div>
@@ -100,6 +102,9 @@ export default class GetToKnowSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.get-to-know {
+  background-color: #ebebeb;
+}
 .get-to-know-title {
   font-size: 30px;
 }

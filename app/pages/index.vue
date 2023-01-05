@@ -15,15 +15,17 @@
           Enable faster insight generation with Pensieve’s AI solutions for emerging-market
           government and enterprise
         </p>
-        <div class="xl:mb-0">
-          <lottie-player
-            class="cursor-pointer"
-            @click="$router.push('/about')"
-            src="/animation/button-home.json"
-            ref="lottie"
-            id="lottieBtn"
-          ></lottie-player>
-        </div>
+        <client-only>
+          <div class="xl:mb-0">
+            <lottie-player
+              class="cursor-pointer"
+              @click="$router.push('/about')"
+              src="/animation/button-home.json"
+              ref="lottie"
+              id="lottieBtn"
+            ></lottie-player>
+          </div>
+        </client-only>
       </div>
       <div class="hidden lg:flex flex-col w-full sm:w-1/2 lg:w-2/5">
         <img
