@@ -39,6 +39,18 @@ interface BlogPost {
   image_url: string;
 }
 
+interface Lottie {
+  setDirection(direction: number): void;
+  play(): void;
+  playSegments(segments: number[] | number[][], forceFlag?: boolean): void;
+  getLottie(): Promise<{
+    play(): void;
+    playSegments(segments: number[] | number[][], forceFlag?: boolean): void;
+    goToAndStop(value: number, isFrame: boolean): void;
+    goToAndPlay(value: number, isFrame: boolean): void;
+    totalFrames: number;
+  }>;
+}
 type HTMLElementLottie = HTMLElement & {
   setDirection(direction: number): void;
   play(): void;

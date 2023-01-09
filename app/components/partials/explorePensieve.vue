@@ -28,7 +28,7 @@ import settings from '@/content/settings/general.json';
     return 'slide-left';
   },
 })
-export default class GetToKnowSection extends Vue {
+export default class ExplorePensieveSection extends Vue {
   instagramURL = settings.instagramUrl;
 
   linkedinURL = settings.linkedinUrl;

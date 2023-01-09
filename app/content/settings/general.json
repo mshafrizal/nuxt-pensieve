@@ -60,14 +60,49 @@
       "name": "Vessel and Border Intelligence"
     }
   ],
+  "getToKnowContent": [
+    {
+      "author": "Hanna Annisa",
+      "position": "CEO Office Analyst",
+      "text": "Pensieve is a place for me to learn about the startup and entrepreneurship world and grow in my career and who I am as a person.<br /><br /> An expensive experience working closely with the CEO, Farina. she is a nice person and provided me with an opportunity to learn more about technology, marketing, and business development.",
+      "active": true
+    },
+    {
+      "author": "Agung Pribowo",
+      "position": "Backend Engineer",
+      "text": "Theoretically, maybe we understand the meaning of SDLC (Software Development Life Cycle) But in practice, collaborating across divisions makes us learn and develop how software can help us all.",
+      "active": false
+    },
+    {
+      "author": "Dzaky",
+      "position": "Technical Writer",
+      "text": "At Pensieve, besides applying our skills, we also have an opportunity to learn new ones. So, it is an excellent place to grow yourself professionally and personally. Besides, we have people from various backgrounds, making it a diverse and exciting workplace.",
+      "active": false
+    },
+    {
+      "author": "Yoana",
+      "position": "Graphic Designer",
+      "text": "Pensieve provides me with a work-life balance as a designer. It can happen when you can manage your time and productivity, rarely be disturbed outside work hours, to develop your personal life.",
+      "active": false
+    }
+  ],
   "getToKnowText": [
-    "Pensieve is a place for me to learn about the startup and entrepreneurship world and grow in my career and who I am as a person. An expensive experience working closely with the CEO, Farina. she is a nice person and provided me with an opportunity to learn more about technology, marketing, and business development."
+    "Pensieve is a place for me to learn about the startup and entrepreneurship world and grow in my career and who I am as a person. An expensive experience working closely with the CEO, Farina. she is a nice person and provided me with an opportunity to learn more about technology, marketing, and business development.",
+    "Theoretically, maybe we understand the meaning of SDLC (Software Development Life Cycle) But in practice, collaborating across divisions makes us learn and develop how software can help us all.",
+    "At Pensieve, besides applying our skills, we also have an opportunity to learn new ones. So, it is an excellent place to grow yourself professionally and personally. Besides, we have people from various backgrounds, making it a diverse and exciting workplace.",
+    "Pensieve provides me with a work-life balance as a designer. It can happen when you can manage your time and productivity, rarely be disturbed outside work hours, to develop your personal life."
   ],
   "getToKnowAuthor": [
-    "Hanna Annisa"
+    "Hanna Annisa",
+    "Agung Pribowo",
+    "Dzaky",
+    "Yoana"
   ],
   "getToKnowJobTitle": [
-    "CEO Office Analyst"
+    "CEO Office Analyst",
+    "Backend Engineer",
+    "Technical Writer",
+    "Graphic Designer"
   ],
   "pensieve_green_logo": "https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/pensieve-logo-green_-JWIJpk9N.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1669439827352",
   "pensieve_black_logo": "https://ik.imagekit.io/vin64b9qvp9/pensieveassets/uploads/pensieve-logo-black_wwWueRMhu.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1669442167496"
